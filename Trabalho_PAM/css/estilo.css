@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,700&family=Ms+Madi&family=Nunito:ital,wght@1,700&family=Qwitcher+Grypen:wght@700&family=Yellowtail&family=Yusei+Magic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+:root{
+    --bg_navbar: #333;
+    --c_font_light: #f2f2f2;
+    --c_hover: #555;
+    --c_bar: #ffffff;
+    --c_content: rgb(99, 99, 99);
+    --c_hover_cont: rgb(121, 121, 121);
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-image: url(/img/Bg1.png);
+    
+}
+
+p {
+    font-family: 'Indie Flower', cursive;
+    display: flex;
+    font-size: 30px;
+    font-style: italic;
+    text-align: center;
+    padding-top: 160px;
+    padding-left: 100px;
+    max-width: 800px;
+    cursor: default;
+}
+
+h2 {
+    margin: auto;
+    cursor: default;font-family: 'Indie Flower', cursive;
+}
+
+.espaco {
+    display: flex;
+    align-items: center;
+    padding-top: 150px;
+    background-color: black 5%;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+}
+
+.image {
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.image img{
+    max-width: 250px;
+    cursor: pointer;
+
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--bg_navbar) 4%;
+    color: var(--c_font_light);
+    padding-top: 10px;
+    font-family: 'Indie Flower', cursive;
+}
+
+.navbar_titulo{
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+    cursor: default;
+}
+
+.navbar_link ul{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+.navbar_link li{
+    list-style-type: none;
+}
+
+.navbar_link a{
+    text-decoration: none;
+    color: var(--c_font_light);
+    padding: 1rem;
+    display: block;
+}
+
+#log{
+    background-color: #d40000;
+    border-radius: 15px;
+    text-align: right;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar_link #log:hover {
+    color: black;
+    background-color: #fe2712;
+}
+
+.navbar_link a:hover{
+    transition: 0.5s;
+    color: burlywood;
+}
+
+.navbar_button{
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.navbar_button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: var(--c_bar);
+    border-radius: 10px;
+    transition: 0.6s;
+}
+
+footer {
+    background-color: #d40000;
+}
+
+/* Estilo da opção dropdown */
+.dropdown .drop_button{
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background: inherit;
+    color: inherit;
+    padding: 1rem;
+    font-family: inherit;
+    margin: 0px;
+}
+
+.dropdown:hover .drop_button{
+    color: burlywood;
+    cursor: pointer;
+}
+
+.drop_content{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.drop_content a{
+    color: var(--c_font_light);
+}
+
+.drop_content a:hover{
+    color: burlywood;
+    transition: 0.6s;
+}
+
+.dropdown:hover .drop_content{
+    display: block;
+}
+
+@media (max-width: 500px){
+    .navbar_button{
+        display: flex;
+    }
+
+    .navbar_link{
+        display: none;
+        width: 100%;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar_link ul{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar_link li{
+        text-align: center;
+    }
+
+    .navbar_link li a{
+        padding: 1rem 1rem;
+    }
+
+    #log{
+        text-align: center;
+    }
+
+    p {
+        display: flex;
+        text-align: left;
+        padding-left: 10px;
+        max-width: 700px;
+        font-size: large;
+    }
+
+    .navbar_link #log:hover {
+        color: black;
+        background-color: #fe2712;
+    }
+
+    .image img {
+        max-width: 100px;
+    }
+
+    body{
+        text-align: center;
+    }
+
+    .navbar_link.active{
+        display: flex;
+    }
+
+    /* Estilo das opções dropdown na tela de celular */
+
+    .navbar_link.active .drop_content{
+        position: relative;
+    }
+
+    .navbar_link.active .dropdown .drop_button{
+        width: 100%;
+    }
+
+    /* Animação do botão do menu responsivo */
+
+    #top, #bottom{
+        transform-origin: left;
+    }
+
+    .navbar.active .navbar_button #top{
+        transform: rotate(38deg);
+        transition: 0.6s;
+    }
+
+    .navbar.active .navbar_button #center{
+        opacity: 0;
+        transition: 0.6s;
+    }
+
+    .navbar.active .navbar_button #bottom{
+        transform: rotate(-38deg);
+        transition: 0.6s;
+    }
+}
